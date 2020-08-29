@@ -1,4 +1,4 @@
-on: [issue-comment]
+on: [issue_comment]
 
 jobs:
   hello_world_job:
