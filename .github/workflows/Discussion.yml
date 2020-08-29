@@ -1,6 +1,6 @@
 on:
   issue_comment:
-    types: [created, deleted]
+    types: [created]
 jobs:
   FindOutHowManyComments:
     runs-on: ubuntu-latest
