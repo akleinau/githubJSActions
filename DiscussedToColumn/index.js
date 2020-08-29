@@ -19,7 +19,7 @@ fetch(`https://api.github.com/repos/akleinau/githubJSActions/issues/${issue_numb
   .then(user => {
     count = user.length
     console.log(user.length);
-    if (count > 4) core.setOutput('continue', 'true');
+    if (count == 2) core.setOutput('continue', 'true');
     else core.setOutput('continue', 'false');
 
   })
