@@ -4,6 +4,8 @@ description: 'Put issues with more than 5 comments to discussion tab'
 outputs:
   continue: 
     description: 'Boolean, true if further actions should happen'
+  issue_number:
+    description: 'the number of the issue that should be moved'
 
 runs:
   using: 'node12'

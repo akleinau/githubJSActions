@@ -3,7 +3,13 @@ require('cross-fetch/polyfill');
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/2/comments')
+const payload = JSON.stringify(github.context.payload.comment.issue_url, undefined, 2)
+const splitted = payload.split("/");
+const issue_number = splitted[splitted.length-1];
+console.log(`issue_url: ${issue_number}`);
+core.setOutput('issue_number', issue_number);
+
+fetch(`https://api.github.com/repos/akleinau/githubJSActions/issues/${issue_number}/comments`)
   .then(res => {
     if (res.status >= 400) {
       throw new Error("Bad response from server");
@@ -15,10 +21,6 @@ fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/2/comments')
     console.log(user.length);
     if (count > 4) core.setOutput('continue', 'true');
     else core.setOutput('continue', 'false');
-    const payload = JSON.stringify(github.context.payload.comment.issue_url, undefined, 2)
-    const splitted = payload.split("/");
-    const issue_number = splitted[splitted.length-1];
-    console.log(`issue_url: ${issue_number}`);
 
   })
   .catch(err => {

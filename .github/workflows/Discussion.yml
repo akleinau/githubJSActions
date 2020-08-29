@@ -15,5 +15,5 @@ jobs:
       with:
         project-name: Issues
         column-name: In discussion
-        issue-number: 2
+        issue-number: ${{ steps.count.outputs.issue_number }} 
       if: steps.count.outputs.continue == 'true'
