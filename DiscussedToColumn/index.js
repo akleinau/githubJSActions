@@ -16,7 +16,9 @@ fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/2/comments')
     if (count > 4) core.setOutput('continue', 'true');
     else core.setOutput('continue', 'false');
     const payload = JSON.stringify(github.context.payload.comment.issue_url, undefined, 2)
-    console.log(`issue_url: ${payload}`);
+    const splitted = payload.split("/");
+    const issue_number = splitted[splitted.length-1];
+    console.log(`issue_url: ${issue_number}`);
 
   })
   .catch(err => {
