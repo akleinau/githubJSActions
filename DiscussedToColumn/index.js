@@ -9,7 +9,8 @@ const issue_number = splitted[splitted.length-1];
 console.log(`issue_id: ${issue_number}`);
 core.setOutput('issue_number', issue_number);
 
-fetch(`https://api.github.com/repos/akleinau/githubJSActions/issues/${issue_number}/comments`)
+const repoURL = core.getInput('repo');
+fetch(`${repo}/${issue_number}/comments`)
   .then(res => {
     if (res.status >= 400) {
       throw new Error("Bad response from server");

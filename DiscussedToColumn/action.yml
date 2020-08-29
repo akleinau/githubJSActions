@@ -1,6 +1,9 @@
 name: 'DiscussedToColumn'
 description: 'Put issues with more than 5 comments to discussion tab'
-#inputs:
+inputs:
+  repo:
+    description: 'which repo'
+    required: true
 outputs:
   continue: 
     description: 'Boolean, true if further actions should happen'

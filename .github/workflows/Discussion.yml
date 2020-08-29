@@ -9,6 +9,8 @@ jobs:
     - name: count
       id: count
       uses: akleinau/githubJSActions/DiscussedToColumn@master
+      with:
+        repo: https://api.github.com/repos/akleinau/githubJSActions
     - name: printit
       run: echo ${{ steps.count.outputs.continue }} 
     - name: addToColumn
