@@ -10,8 +10,9 @@ console.log(`issue_id: ${issue_number}`);
 core.setOutput('issue_number', issue_number);
 
 const repoURL = core.getInput('repo');
-console.log(`${repoURL}/${issue_number}/comments`);
-fetch(`${repoURL}/${issue_number}/comments`)
+const URL = `${repoURL}/${issue_number}/comments`;
+console.log(URL);
+fetch(URL)
   .then(res => {
     if (res.status >= 400) {
       throw new Error("Bad response from server");
