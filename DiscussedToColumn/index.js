@@ -17,7 +17,7 @@ fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/2/comments')
     else core.setOutput('continue', 'false');
     const payload = JSON.stringify(github.context.payload, undefined, 2)
     console.log(`The event payload: ${payload}`);
-    const url = payload["comment"]["issue_url"];
+    const url = payload.comment;
     console.log(`The url: ${url}`);
 
   })
