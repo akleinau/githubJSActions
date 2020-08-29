@@ -3,7 +3,7 @@ require('cross-fetch/polyfill');
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/1/comments')
+fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/2/comments')
   .then(res => {
     if (res.status >= 400) {
       throw new Error("Bad response from server");

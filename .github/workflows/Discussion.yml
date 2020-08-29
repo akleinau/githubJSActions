@@ -15,5 +15,5 @@ jobs:
       with:
         project-name: Issues
         column-name: In discussion
-        issue-number: 1
+        issue-number: 2
       if: steps.count.outputs.continue == 'true'
