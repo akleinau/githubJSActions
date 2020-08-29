@@ -15,10 +15,8 @@ fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/2/comments')
     console.log(user.length);
     if (count > 4) core.setOutput('continue', 'true');
     else core.setOutput('continue', 'false');
-    const payload = JSON.stringify(github.context.payload, undefined, 2)
+    const payload = JSON.stringify(github.context.payload.comment, undefined, 2)
     console.log(`The event payload: ${payload}`);
-    const url = payload.comment;
-    console.log(`The url: ${url}`);
 
   })
   .catch(err => {
