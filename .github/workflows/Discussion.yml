@@ -1,12 +1,19 @@
 on: [issue_comment]
 
 jobs:
-  hello_world_job:
+  FindOutHowManyComments:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: aJobThatMoves
     steps:
-    - name: Hello world action step
+    - name: count
       id: hello
       uses: akleinau/githubJSActions/DiscussedToColumn@master
      # with:
-
+      output: continue
+    - name: add-new-issues-to-repository-based-project-column
+      uses: docker://takanabe/github-actions-automate-projects:v0.0.1
+      if: ${{ steps.count.outputs.continue == true }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_PROJECT_URL: https://github.com/akleinau/githubJSActions/projects/1
+        GITHUB_PROJECT_COLUMN_NAME: In discussion

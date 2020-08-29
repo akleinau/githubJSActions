@@ -1,7 +1,9 @@
 name: 'DiscussedToColumn'
 description: 'Put issues with more than 5 comments to discussion tab'
 #inputs:
-#outputs:
+outputs:
+  continue: 
+    description: 'Boolean, true if further actions should happen'
 
 runs:
   using: 'node12'
