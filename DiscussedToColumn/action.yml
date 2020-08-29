@@ -2,7 +2,8 @@ name: 'DiscussedToColumn'
 description: 'Put issues with more than 5 comments to discussion tab'
 #inputs:
 outputs:
-  out: the output
+  out:
+    description: 'the output'
 runs:
   using: 'node12'
   main: 'index.js'
