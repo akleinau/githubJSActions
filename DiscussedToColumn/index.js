@@ -10,6 +10,7 @@ console.log(`issue_id: ${issue_number}`);
 core.setOutput('issue_number', issue_number);
 
 const repoURL = core.getInput('repo');
+console.log(repoURL);
 fetch(`${repoURL}/${issue_number}/comments`)
   .then(res => {
     if (res.status >= 400) {
