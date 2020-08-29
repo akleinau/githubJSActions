@@ -6,7 +6,7 @@ const github = require('@actions/github');
 const payload = JSON.stringify(github.context.payload.comment.issue_url, undefined, 2)
 const splitted = payload.split("/");
 const issue_number = splitted[splitted.length-1];
-console.log(`issue_url: ${issue_number}`);
+console.log(`issue_id: ${issue_number}`);
 core.setOutput('issue_number', issue_number);
 
 fetch(`https://api.github.com/repos/akleinau/githubJSActions/issues/${issue_number}/comments`)
