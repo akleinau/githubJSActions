@@ -10,7 +10,7 @@ console.log(`issue_id: ${issue_number}`);
 core.setOutput('issue_number', issue_number);
 
 const repoURL = core.getInput('repo');
-const URL = `${repoURL}/${issue_number}/comments`;
+const URL = `${repoURL}/issues/${issue_number}/comments`;
 console.log(URL);
 fetch(URL)
   .then(res => {
