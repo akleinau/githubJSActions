@@ -13,8 +13,8 @@ fetch('https://api.github.com/repos/akleinau/githubJSActions/issues/1/comments')
   .then(user => {
     count = user.length
     console.log(user.length);
-    if (count > 4) core.setOutput("continue", true);
-    else core.setOutput("continue", false);
+    if (count > 4) core.setOutput("continue", "true");
+    else core.setOutput("continue", "false");
 
   })
   .catch(err => {
