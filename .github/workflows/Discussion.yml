@@ -9,7 +9,6 @@ jobs:
       id: hello
       uses: akleinau/githubJSActions/DiscussedToColumn@master
      # with:
-      output: continue
     - name: add-new-issues-to-repository-based-project-column
       uses: docker://takanabe/github-actions-automate-projects:v0.0.1
       if: ${{ steps.count.outputs.continue == true }}
