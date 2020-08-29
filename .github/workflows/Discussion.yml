@@ -8,7 +8,7 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: akleinau/githubJSActions/DiscussedToColumn@master
-      with:
+     # with:
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"

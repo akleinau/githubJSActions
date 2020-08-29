@@ -1,6 +1,6 @@
 name: 'DiscussedToColumn'
 description: 'Put issues with more than 5 comments to discussion tab'
-inputs:
+#inputs:
 outputs:
   out: the output
 runs:
