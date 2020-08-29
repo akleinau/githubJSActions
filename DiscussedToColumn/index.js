@@ -3,7 +3,7 @@ require('cross-fetch/polyfill');
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-const payload = JSON.stringify(github.context.payload.comment.issue_url, undefined, 2)
+const payload = github.context.payload.comment.issue_url
 const splitted = payload.split("/");
 const issue_number = splitted[splitted.length-1];
 console.log(`issue_id: ${issue_number}`);
