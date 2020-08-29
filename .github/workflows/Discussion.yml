@@ -6,7 +6,7 @@ jobs:
     name: aJobThatMoves
     steps:
     - name: count
-      id: hello
+      id: count
       uses: akleinau/githubJSActions/DiscussedToColumn@master
     - name: printit
       run: echo ${{ steps.count.outputs.continue }}
