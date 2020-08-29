@@ -11,7 +11,7 @@ fetch('https://api.github.com/repos/akleinau/test/issues/1/comments')
     return res.json();
   })
   .then(user => {
-    console.log(user[0].id);
+    console.log(user.length);
   })
   .catch(err => {
     console.error(err);
