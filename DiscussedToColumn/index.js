@@ -1,18 +1,18 @@
+require('cross-fetch/polyfill');
+
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-try {
-  // `who-to-greet` input defined in action metadata file
-  fetch('https://api.github.com/repos/akleinau/test/issues/1/comments')
-  .then(function (response) {
-    return response.json();
+fetch('https://api.github.com/repos/akleinau/test/issues/1/comments')
+  .then(res => {
+    if (res.status >= 400) {
+      throw new Error("Bad response from server");
+    }
+    return res.json();
   })
-  .then(function (data) {
-    appendData(data);
+  .then(user => {
+    console.log(user);
   })
-  .catch(function (err) {
-    console.log(err);
+  .catch(err => {
+    console.error(err);
   });
-} catch (error) {
-  core.setFailed(error.message);
-}
