@@ -11,7 +11,7 @@ jobs:
      # with:
     - name: add-new-issues-to-repository-based-project-column
       uses: docker://takanabe/github-actions-automate-projects:v0.0.1
-      if: steps.count.outputs.continue == "true"
+      if: steps.count.outputs.continue == 'true'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_PROJECT_URL: https://github.com/akleinau/githubJSActions/projects/1
