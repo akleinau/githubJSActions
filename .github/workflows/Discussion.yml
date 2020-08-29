@@ -9,7 +9,7 @@ jobs:
       id: count
       uses: akleinau/githubJSActions/DiscussedToColumn@master
     - name: printit
-      run: echo ${{ steps.count.outputs.continue }}
+      run: echo ${{ steps.count.outputs.continue }} 
     - name: addToColumn 
       - uses: alex-page/github-project-automation-plus@v0.2.4
         with:
