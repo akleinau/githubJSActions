@@ -10,10 +10,10 @@ jobs:
       uses: akleinau/githubJSActions/DiscussedToColumn@master
     - name: printit
       run: echo ${{ steps.count.outputs.continue }} 
-    - name: addToColumn 
-      - uses: alex-page/github-project-automation-plus@v0.2.4
-        with:
-          project: Issues
-          column: In discussion
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: addToColumn
+      uses: alex-page/github-project-automation-plus@v0.2.4
+      with:
+        project: Issues
+        column: In discussion
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
       if: steps.count.outputs.continue == 'true'
