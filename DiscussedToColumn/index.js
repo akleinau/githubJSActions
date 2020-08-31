@@ -22,7 +22,7 @@ fetch(URL)
   .then(user => {
     count = user.length
     console.log(user.length);
-    if (count == 2) core.setOutput('continue', 'true');
+    if (count == 3) core.setOutput('continue', 'true');
     else core.setOutput('continue', 'false');
 
   })
