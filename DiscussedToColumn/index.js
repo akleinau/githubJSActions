@@ -30,7 +30,7 @@ fetch(URL)
     console.error(err);
   });
 
-URL = `${repoURL}/issues/${issue_number}/pull_request`;
+URL = `${repoURL}/issues/${issue_number}`;
 console.log(URL);
 fetch(URL)
   .then(res => {
@@ -40,8 +40,8 @@ fetch(URL)
     return res.json();
   })
   .then(user => {
-    console.log(user != null);
-    if (user == null) core.setOutput('continue', 'false');
+    console.log("pull_request" in user);
+    if ("pull_request" in user) core.setOutput('continue', 'false');
   })
   .catch(err => {
     console.error(err);
