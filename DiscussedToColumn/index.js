@@ -24,15 +24,10 @@ fetch(URL)
     console.log(user.length);
     if (count == 3) core.setOutput('continue', 'true');
     else core.setOutput('continue', 'false');
-
+    const URL2 = `${repoURL}/issues/${issue_number}`;
+    console.log(URL2);
+    return fetch(URL2);
   })
-  .catch(err => {
-    console.error(err);
-  });
-
-URL = `${repoURL}/issues/${issue_number}`;
-console.log(URL);
-fetch(URL)
   .then(res => {
     if (res.status >= 400) {
       throw new Error("Bad response from server");
@@ -46,3 +41,6 @@ fetch(URL)
   .catch(err => {
     console.error(err);
   });
+
+
+ 
