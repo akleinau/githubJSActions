@@ -29,3 +29,20 @@ fetch(URL)
   .catch(err => {
     console.error(err);
   });
+
+URL = `${repoURL}/issues/${issue_number}/pull_request`;
+console.log(URL);
+fetch(URL)
+  .then(res => {
+    if (res.status >= 400) {
+      throw new Error("Bad response from server");
+    }
+    return res.json();
+  })
+  .then(user => {
+    console.log(user != null);
+    if (user == null) core.setOutput('continue', 'false');
+  })
+  .catch(err => {
+    console.error(err);
+  });
